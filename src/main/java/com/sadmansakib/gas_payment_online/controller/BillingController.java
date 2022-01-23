@@ -28,7 +28,7 @@ public class BillingController {
         return modelMapper.map(customerDto, Billing.class);
     }
 
-    @PostMapping
+    @PostMapping("/submit_bill")
     public ResponseEntity<BillingDto> submitBill(@RequestBody BillingDto billingDto){
         Billing billing = convertToBillingEntity(billingDto);
         Billing submittedBill = billingService.submitBill(billing);
